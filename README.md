@@ -1,21 +1,48 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/Aj7Sf-j_)
-[![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-718a45dd9cf7e7f842a935f5ebbe5719a5e09af4491e668f4dbf3b35d5cca122.svg)](https://classroom.github.com/online_ide?assignment_repo_id=10866021&assignment_repo_type=AssignmentRepo)
-# Using pretrained CNNs for image classification
+[here](https://stackoverflow.com/questions/42443936/keras-split-train-test-set-when-using-imagedatagenerator).
 
-In the previous assignments involving classification, we were performing a kind of simple feature extraction on images by making them greyscale and flattening them to a single vector. This vector of pixel values was then used as the input for some kind of classification model.
+# Assignment 3 – Pretrained CNNs - Using pretrained CNNs for image classification
+## Contribution
+The code in this assignment is inspired from the class notebooks, and from [Vijayabhaskar J] (https://vijayabhaskar96.medium.com/tutorial-on-keras-flow-from-dataframe-1fd4493d237c). All comments have been written by me. The data used in this assignment is gathered from [Rashmi Margani] (https://www.kaggle.com/datasets/validmodel/indo-fashion-dataset), the Kaggle dataset author. 
+The dataset consists of 106 thousand images in 15 different categories. The data is split up into three JSON files for train, test, and validation, and three folders containing the images, also split into train, test, and validation. The images are gathered from Indian e-commerce websites. 
 
-For this assignment, we're going to be working with an interesting kind of cultural phenomenon - fashion. On UCloud, you have access to a dataset of *Indo fashion* taken from this [Kaggle dataset](https://www.kaggle.com/datasets/validmodel/indo-fashion-dataset). There is a paper which goes along with it on *arXiv.org*, which you can read [here](https://arxiv.org/abs/2104.02830).
+This assignment used the pretrained convolutional neural network VGG16 *find link to VGG16*
 
-Your instructions for this assignment are short and simple:
 
-- You should write code which trains a classifier on this dataset using a *pretrained CNN like VGG16*
-- Save the training and validation history plots
-- Save the classification report
+## Assignment description
+From Ross: Your instructions for this assignment are short and simple:
+•	You should write code which trains a classifier on this dataset using a pretrained CNN like VGG16
+•	Save the training and validation history plots
+•	Save the classification report
 
-## Tips
+## Methods / what the code does
+The code in this assignment does the following. Loads and unzips the data. Place the three JSON files into a pandas dataframe. Provides the possibility to create a sample size of the data. Creates an image data generator for the train and validation images, and one for the test images. Uses tensorflows flow_from_dataframe, to load the images and data augment them in real time. Loads a pretrained model, VGG16. Trains the model with the training data, and creates predictions with the test data. Lastly, it plots the model history and creates a classification report.
 
-- You should not upload the data to your repo - it's around 3GB in size.
-  - Instead, you should document in the README file where your data comes from, how a user should find it, and where it should be saved in order for your code to work correctly.
-- The data comes already split into training, test, and validation datasets. You can use these in a ```TensorFlow``` data generator pipeline like we saw in class this week - you can see an example of that [here](https://stackoverflow.com/questions/42443936/keras-split-train-test-set-when-using-imagedatagenerator).
-- There are a lot of images, around 106k in total. Make sure to reserve enough time for running your code!
-- The image labels are in the metadata folder, stored as JSON files. These can be read into ```pandas``` using ```read_json()```. You can find the documentation for that online.
+## Findings
+Sample
+-	I have chosen to work on a subset of the data due to time limitations. I worked with 10 000 train images, 2000 validation images, and 2000 test images.
+Plots 
+-	The loss and accuracy plot is saved in the folder figs. The plot shows that the data is not over nor under fitting, but that train and validation are following each other smoothly. 
+Classification report 
+-	The classification report is saved in the folder models. The model has an f1 accuracy score of 0.69. The model preforms the worst on gowns (0.48), and best on blouse (0.87)
+Model
+-	The model is saved in the folder models
+
+## Usage
+
+OBS! Ucloud was bugging. So, the first guide might not work, as I am getting the data from the zipfile. The second guide gets the data from the visual_analytics folder. But I am will work on this another day, when Ucloud is ready.
+Guide one
+To use this script follow these steps:
+1.	Get the data from Kaggle as a zip file and place it in a data folder 
+2.	Run ```bash setup.sh``` in the command line, which will create a virtual environment, and install the necessary requirements.
+3.	Run ```source ./assignment_3/bin/activate``` to activate the virtual environment.
+4.	In the command line write this
+a.	python3 src/testscript.py --zip_name data/archive.zip --filepath "data" --train_sample_size 1000 --val_sample_size 200 --test_sample_size 200 --epochs 5
+i.	```--zip_name``` = The path to your zip file including the zip file
+ii.	```--filepath``` = The path to the folder images excluding images. (located in data folder)
+iii.	The rest of the arguments all have a default value, but can be modified.
+Guide two
+To use this script follow these steps:
+1.	Run ```bash setup.sh``` in the command line, which will create a virtual environment, and install the necessary requirements.
+2.	Run ```source ./assignment_3/bin/activate``` to activate the virtual environment.
+3.	In the command line write this
+a.	python3 src/testscript.py --zip_name data/archive.zip --filepath "../../images" --train_sample_size 1000 --val_sample_size 200 --test_sample_size 200 --epochs 5
