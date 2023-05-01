@@ -1,6 +1,6 @@
 
 
-# python3 src/testscript.py --filepath "../../images" --train_sample_size 10000 --val_sample_size 2000 --test_sample_size 2000 --epochs 10
+# python3 src/testscript.py --zip_name "archive(3).zip --filepath "../../images" --train_sample_size 1000 --val_sample_size 200 --test_sample_size 200 --epochs 5
 
 #!/usr/bin/env bash
 
