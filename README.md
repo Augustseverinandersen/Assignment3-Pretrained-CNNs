@@ -2,7 +2,7 @@
 
 # Assignment 3 – Pretrained CNNs - Using pretrained CNNs for image classification
 ## Contribution
-The code in this assignment is inspired from the class notebooks, and from [Vijayabhaskar J] (https://vijayabhaskar96.medium.com/tutorial-on-keras-flow-from-dataframe-1fd4493d237c). All comments have been written by me. The data used in this assignment is gathered from [Rashmi Margani] (https://www.kaggle.com/datasets/validmodel/indo-fashion-dataset), the Kaggle dataset author. 
+The code in this assignment is inspired from the class notebooks, and from [Vijayabhaskar J](https://vijayabhaskar96.medium.com/tutorial-on-keras-flow-from-dataframe-1fd4493d237c). All comments have been written by me. The data used in this assignment is gathered from [Rashmi Margani](https://www.kaggle.com/datasets/validmodel/indo-fashion-dataset), the Kaggle dataset author. 
 The dataset consists of 106 thousand images in 15 different categories. The data is split up into three JSON files for train, test, and validation, and three folders containing the images, also split into train, test, and validation. The images are gathered from Indian e-commerce websites. 
 
 This assignment used the pretrained convolutional neural network VGG16 *find link to VGG16*
@@ -10,9 +10,9 @@ This assignment used the pretrained convolutional neural network VGG16 *find lin
 
 ## Assignment description
 From Ross: Your instructions for this assignment are short and simple:
-•	You should write code which trains a classifier on this dataset using a pretrained CNN like VGG16
-•	Save the training and validation history plots
-•	Save the classification report
+- You should write code which trains a classifier on this dataset using a pretrained CNN like VGG16
+- Save the training and validation history plots
+- Save the classification report
 
 ## Methods / what the code does
 The code in this assignment does the following. Loads and unzips the data. Place the three JSON files into a pandas dataframe. Provides the possibility to create a sample size of the data. Creates an image data generator for the train and validation images, and one for the test images. Uses tensorflows flow_from_dataframe, to load the images and data augment them in real time. Loads a pretrained model, VGG16. Trains the model with the training data, and creates predictions with the test data. Lastly, it plots the model history and creates a classification report.
