@@ -30,19 +30,23 @@ Model
 ## Usage
 
 OBS! Ucloud was bugging. So, the first guide might not work, as I am getting the data from the zipfile. The second guide gets the data from the visual_analytics folder. But I am will work on this another day, when Ucloud is ready.
-Guide one
+
+### Guide one
 To use this script follow these steps:
 1.	Get the data from Kaggle as a zip file and place it in a data folder 
 2.	Run ```bash setup.sh``` in the command line, which will create a virtual environment, and install the necessary requirements.
 3.	Run ```source ./assignment_3/bin/activate``` to activate the virtual environment.
 4.	In the command line write this
+
 -- python3 src/testscript.py --zip_name data/archive.zip --filepath "data" --train_sample_size 1000 --val_sample_size 200 --test_sample_size 200 --epochs 5
 ---	```--zip_name``` = The path to your zip file including the zip file
 ---	```--filepath``` = The path to the folder images excluding images. (located in data folder)
 ---	The rest of the arguments all have a default value, but can be modified.
-Guide two
+
+### Guide two
 To use this script follow these steps:
 1.	Run ```bash setup.sh``` in the command line, which will create a virtual environment, and install the necessary requirements.
 2.	Run ```source ./assignment_3/bin/activate``` to activate the virtual environment.
 3.	In the command line write this
+
 --	python3 src/testscript.py --zip_name data/archive.zip --filepath "../../images" --train_sample_size 1000 --val_sample_size 200 --test_sample_size 200 --epochs 5
