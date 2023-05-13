@@ -59,10 +59,13 @@ The script does the following: Unzips the zip file and loads the JSON files into
 ## Findings
 Sample
 -	I worked on a subset of the data due to time limitations. I worked with 10 000 train images, 2000 validation images, and 2000 test images.
+
 Plots 
 -	The loss and accuracy plot is saved in the folder figs. The plot shows that the data is not over nor under fitting, but that train and validation are following each other smoothly. 
+
 Classification report 
 -	The classification report is saved in the folder models. The model has an f1 accuracy score of 0.69. The model preforms the worst on gowns (0.48), and best on blouse (0.87)
+
 Model
 -	The model is saved in the folder models
 
