@@ -2,16 +2,9 @@
 import tensorflow as tf
 
 # image processsing
-from tensorflow.keras.preprocessing.image import (load_img,
-                                                  img_to_array,
-                                                  ImageDataGenerator)
+from tensorflow.keras.preprocessing.image import (ImageDataGenerator)
 # VGG16 model
-from tensorflow.keras.applications.vgg16 import (preprocess_input,
-                                                 decode_predictions,
-                                                 VGG16)
-# cifar10 data - 32x32
-from tensorflow.keras.datasets import cifar10
-
+from tensorflow.keras.applications.vgg16 import (VGG16)
 # layers
 from tensorflow.keras.layers import (Flatten, 
                                      Dense, 
@@ -25,19 +18,18 @@ from tensorflow.keras.optimizers.schedules import ExponentialDecay
 from tensorflow.keras.optimizers import SGD
 
 #scikit-learn
-from sklearn.preprocessing import LabelBinarizer
 from sklearn.metrics import classification_report
 
-# for plotting
-import numpy as np
+# Data munging
 import matplotlib.pyplot as plt
 import pandas as pd
+import zipfile
+
+# System tools
 import os
 import argparse
 import sys
 sys.path.append(".")
-import zipfile
-
 
 
 def input_parse():
@@ -68,9 +60,9 @@ def unzip(args):
 
 def loading_metadata(args):
     print("Loading metadata to dataframes") # Loading JSON files of metadata, containing labels and path to images
-    test_metadata = pd.read_json(os.path.join(args.filepath, "metadata", "test_data.json"), lines=True) 
-    train_metadata = pd.read_json(os.path.join(args.filepath, "metadata", "train_data.json"), lines=True)
-    val_metadata = pd.read_json(os.path.join(args.filepath, "metadata", "val_data.json"), lines=True)
+    test_metadata = pd.read_json(os.path.join(args.filepath, "test_data.json"), lines=True) 
+    train_metadata = pd.read_json(os.path.join(args.filepath, "train_data.json"), lines=True)
+    val_metadata = pd.read_json(os.path.join(args.filepath, "val_data.json"), lines=True)
     return test_metadata, train_metadata, val_metadata
 
 
@@ -95,8 +87,7 @@ def image_data_generator(): # Data augmentaion
 
 
 def image_directory(args):  # removing the last part of the specified filepath
-    print("Finding path to images") # the metadata contains the rest of the path
-    #directory_images = os.path.dirname(args.filepath)
+    print("Finding path to images") # the metadata contains the rest of the path hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh
     directory_images = os.path.join(args.filepath)
     return directory_images
 
@@ -177,12 +168,12 @@ def load_model(): # Code taken from in class notebooks
         
     # Add new classifier layers
     flat1 = Flatten()(model.layers[-1].output)
-    bn = BatchNormalization()(flat1) # Added batnormalization from tensorflow. Take the previouslayer, normalise the values, and than pass them on
+    bn = BatchNormalization()(flat1) # Added batchnormalization from tensorflow. Take the previouslayer, normalise the values, and than pass them on
     class1 = Dense(256, 
                 activation='relu')(bn) # Added new classification layer 
     class2 = Dense(128, 
-                activation='relu')(class1) # Added new classification layer with 15 outputs. 15 labels in total
-    output = Dense(15, # 15 labels
+                activation='relu')(class1) 
+    output = Dense(15, # 15 labels # Added new classification layer with 15 outputs. 15 labels in total
                 activation='softmax')(class2)
 
     # define new model

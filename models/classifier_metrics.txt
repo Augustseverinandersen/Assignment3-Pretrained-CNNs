@@ -1,21 +1,21 @@
                       precision    recall  f1-score   support
 
-              blouse       0.85      0.90      0.87       138
-         dhoti_pants       0.80      0.42      0.55       133
-            dupattas       0.66      0.58      0.61       149
-               gowns       0.58      0.41      0.48       136
-           kurta_men       0.58      0.78      0.67       120
-leggings_and_salwars       0.56      0.65      0.60       132
-             lehenga       0.90      0.80      0.85       149
-         mojaris_men       0.79      0.67      0.72       123
-       mojaris_women       0.76      0.84      0.80       139
-       nehru_jackets       0.76      0.76      0.76       127
-            palazzos       0.73      0.67      0.70       133
-          petticoats       0.76      0.75      0.75       146
-               saree       0.67      0.78      0.72       134
-           sherwanis       0.80      0.58      0.67       121
-         women_kurta       0.43      0.78      0.56       120
+              blouse       0.86      0.90      0.88       133
+         dhoti_pants       0.75      0.34      0.47       128
+            dupattas       0.66      0.48      0.55       149
+               gowns       0.71      0.46      0.56       133
+           kurta_men       0.62      0.76      0.68       136
+leggings_and_salwars       0.54      0.68      0.60       132
+             lehenga       0.81      0.80      0.81       148
+         mojaris_men       0.82      0.71      0.76       132
+       mojaris_women       0.74      0.81      0.77       118
+       nehru_jackets       0.74      0.78      0.76       129
+            palazzos       0.76      0.65      0.70       121
+          petticoats       0.75      0.75      0.75       149
+               saree       0.67      0.84      0.75       139
+           sherwanis       0.82      0.47      0.60       116
+         women_kurta       0.45      0.82      0.58       137
 
             accuracy                           0.69      2000
-           macro avg       0.71      0.69      0.69      2000
-        weighted avg       0.71      0.69      0.69      2000
+           macro avg       0.71      0.68      0.68      2000
+        weighted avg       0.71      0.69      0.68      2000
