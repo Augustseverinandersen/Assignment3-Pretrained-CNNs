@@ -10,7 +10,7 @@
 ### Data 
 - The dataset consists of 106 thousand images of 15 different  ethnic clothing items. The data is split up into three JSON files for train, test, and validation, and three folders containing the images, also split into train, test, and validation. The JSON files contain five headers *image_url, image_path, brand, product_title* and *class_label*. The makes uses of *image_path* and *class_label*. *Image_path* is the path to the image from the folder *images*. *Class_label* is the images label. The 15 possible labels are:
 
-*blouse, dhoti_pants, dupattas, gowns, kurta_men, leggings_and_salwars, lehenga, mojaris_men, mojaris_woman, nehru_jackets, palazzos, petticoats, saree, sherwanis,* and *woman_kurta.* 
+*Blouse, dhoti_pants, dupattas, gowns, kurta_men, leggings_and_salwars, lehenga, mojaris_men, mojaris_woman, nehru_jackets, palazzos, petticoats, saree, sherwanis,* and *woman_kurta.* 
 
 - The folder train has 91166 images, folder val has 7500 images, and folder test has 7500 images. All images have different sizes. The images are gathered from Indian e-commerce websites. 
 
