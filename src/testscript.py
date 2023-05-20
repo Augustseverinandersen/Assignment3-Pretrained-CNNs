@@ -107,7 +107,7 @@ def training_images(datagen, train_metadata, directory_images):
         batch_size = 128, # Specifying batch size
         shuffle = True # Shuffle the images around 
     )
-    return train_tf # Returning a tensorflow dataframe
+    return train_tf 
 
 
 def val_images(datagen, val_metadata, directory_images):
