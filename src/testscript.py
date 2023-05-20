@@ -36,7 +36,7 @@ def input_parse():
     # Command line arguments 
     parser = argparse.ArgumentParser()
     parser.add_argument("--zip_name", type=str, help = "Name of the zip folder")
-    parser.add_argument("--filepath", type=str, help = "Path to folder images, not including metadata, train, val, and test") # argument is filepath as a string
+    parser.add_argument("--filepath", type=str, defualt = "data", help = "Path to folder images, not including metadata, train, val, and test") # argument is filepath as a string
     parser.add_argument("--train_sample_size", type = int, default = 91166, help = "Sample size of training images, default is all images")
     parser.add_argument("--val_sample_size", type = int, default = 7500, help = "Sample size of validation images, default is all images")
     parser.add_argument("--test_sample_size", type = int, default = 7500, help = "Sample size of test images, default is all images")
