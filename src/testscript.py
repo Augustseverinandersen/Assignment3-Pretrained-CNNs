@@ -211,28 +211,28 @@ def train_model(train_tf, val_tf, args, model):
 
 
 
-def plot_history(H, epochs, save_path): # Code taken from Ross from inclass notebook, but modified a bit
-    plt.style.use("seaborn-colorblind")
+def plot_history(H, epochs, save_path): # Code taken from Ross, but modified a bit
+    plt.style.use("seaborn-colorblind") # Colour and theme
     # First plot 
-    plt.figure(figsize=(12,6))
-    plt.subplot(1,2,1)
-    plt.plot(np.arange(0, epochs), H.history["loss"], label="train_loss")
-    plt.plot(np.arange(0, epochs), H.history["val_loss"], label="val_loss", linestyle=":")
-    plt.title("Loss curve")
-    plt.xlabel("Epoch")
-    plt.ylabel("Loss")
-    plt.tight_layout()
-    plt.legend()
+    plt.figure(figsize=(12,6)) # Specifying size
+    plt.subplot(1,2,1) # 1 row, 2 columns, 1st plot
+    plt.plot(np.arange(0, epochs), H.history["loss"], label="train_loss") # arrange epochs from 0 to amount of epochs used in training
+    plt.plot(np.arange(0, epochs), H.history["val_loss"], label="val_loss", linestyle=":")# Plotting loss and validation loss
+    plt.title("Loss curve") # Title
+    plt.xlabel("Epoch") # x axis label
+    plt.ylabel("Loss") # y axis label
+    plt.tight_layout() # layout
+    plt.legend() # legend for loss and val_loss
 
     # Second plot
-    plt.subplot(1,2,2)
-    plt.plot(np.arange(0, epochs), H.history["accuracy"], label="train_acc")
+    plt.subplot(1,2,2) # 1 row, 2 columns, 2nd plot
+    plt.plot(np.arange(0, epochs), H.history["accuracy"], label="train_acc") # plotting accuracy and validation accuracy 
     plt.plot(np.arange(0, epochs), H.history["val_accuracy"], label="val_acc", linestyle=":")
-    plt.title("Accuracy curve")
-    plt.xlabel("Epoch")
-    plt.ylabel("Accuracy")
-    plt.tight_layout()
-    plt.legend()
+    plt.title("Accuracy curve") # title
+    plt.xlabel("Epoch") # x axis label
+    plt.ylabel("Accuracy") # y axis label
+    plt.tight_layout() # layout
+    plt.legend() # legend
     plt.savefig(os.path.join(save_path, "loss_and_accuracy_curve.png")) # Save the plot as *name*
 
 
