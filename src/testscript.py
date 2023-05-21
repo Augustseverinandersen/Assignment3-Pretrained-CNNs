@@ -187,9 +187,9 @@ def load_model(): # Code taken from in class notebooks
         decay_rate=0.9) # DEcay by 0.9 to the start learning rate
     sgd = SGD(learning_rate=lr_schedule)
 
-    model.compile(optimizer=sgd,
-                loss='categorical_crossentropy',
-                metrics=['accuracy'])
+    model.compile(optimizer=sgd, # learning rate
+                loss='categorical_crossentropy', # loss function
+                metrics=['accuracy']) # what to display
     # summarize
     print(model.summary())
     return model
