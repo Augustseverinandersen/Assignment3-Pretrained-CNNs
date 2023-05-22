@@ -25,6 +25,7 @@ These are the packages used in this script:
 -	Os is used to navigate file paths, on different operating systems.
 -	Argparse is used to create command line arguments.
 -	Sys is used to navigate the directory.
+-	Numpy (version 1.23.5) is used to handle arrays.
 ## 3.5 Repository contents
 This repository contains the following folders and files:
 -	**data** this is the empty folder, where the zip file will be placed.
@@ -62,7 +63,7 @@ To use this script, follow these steps:
 2.	Get the data from [Kaggle](https://www.kaggle.com/datasets/validmodel/indo-fashion-dataset) as a zip file and place it in the _data_ folder.
 3.	Run ``bash setup.sh`` in the command line. This will create a virtual environment and install the requirements.
 4.	Run ``source ./assignment_3/bin/activate`` in the command-line, to activate the virtual environment.
-5.	In the command line write this ``python3 src/testscript.py --zip_name data/archive.zip --filepath "data" --train_sample_size 1000 --val_sample_size 200 --test_sample_size 200 --epochs 5``
+5.	In the command line write this ``python3 src/pretrained_cnn.py --zip_name data/archive.zip --filepath "data" --train_sample_size 10000 --val_sample_size 2000 --test_sample_size 2000 --epochs 5``
     - The argparse ``--zip_name`` takes a string as input. Here you must write the path to your zip file.
     - The argparse ``--filepath`` takes a string as input and has the default data. Here you must write the path to the folder images excluding images. Only change this if the folder images is located somewhere else.
     - The argparse ``--train_sample_size`` takes an integer as input and has the default 91116. Change this if you want to reduce the size of the dataset.
