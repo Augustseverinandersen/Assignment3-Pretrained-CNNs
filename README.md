@@ -7,7 +7,7 @@
 Written by Ross: 
 Your instructions for this assignment are short and simple, you should write code that trains a classifier on this dataset using a pre-trained CNN like VGG16. Save the training and validation history plots and the classification report.
 ## 3.2 Machine Specifications and My Usage
-All the computation done for this project was performed on the UCloud interactive HPC system, which is managed by the eScience Center at the University of Southern Denmark. Python 1.73.1 with 32 CPU. This script took 1 hour and 40 minutes to run. 7 minutes to unpack the zip file, and 90 minutes to train the model on 10 000 train images with 10 epochs.
+All the computation done for this project was performed on the UCloud interactive HPC system, which is managed by the eScience Center at the University of Southern Denmark. This script ran on Coder Python 1.73.1 and Python version 1.73.1 with 32 CPU. This script took 1 hour and 40 minutes to run. 7 minutes to unpack the zip file, and 90 minutes to train the model on 10 000 train images with 10 epochs.
 ### 3.2.1 Prerequisites 
 To run this script, make sure to have Bash and Python 3 installed on your device. This script has only been tested on Ucloud. 
 ## 3.3 Contribution
